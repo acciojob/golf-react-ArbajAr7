@@ -17,8 +17,8 @@ class App extends Component {
     handleKeyDown(event) {
         if (event.key === "ArrowRight") {
             this.setState((prevState) => {
-                const newLeft = parseInt(prevState.ballPosition.left) + parseInt("5px");
-                return { ballPosition: { left: newLeft+"px" } };
+                const newLeft = parseInt(prevState.ballPosition.left) + 5 + "px";
+                return { ballPosition: { left: newLeft } };
             });
         }
     }
@@ -40,9 +40,9 @@ class App extends Component {
     componentDidMount() {
         document.addEventListener("keydown", this.handleKeyDown);
     }
-    componentWillUnmount() {
-        document.removeEventListener("keydown", this.handleKeyDown);
-    }
+    // componentWillUnmount() {
+    //     document.removeEventListener("keydown", this.handleKeyDown);
+    // }
 
     render() {
         return (
