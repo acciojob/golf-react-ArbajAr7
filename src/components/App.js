@@ -17,8 +17,8 @@ class App extends Component {
     handleKeyDown(event) {
         if (event.key === "ArrowRight") {
             this.setState((prevState) => {
-                const newLeft = parseInt(prevState.ballPosition.left) + 5 + "px";
-                return { ballPosition: { left: newLeft } };
+                const newLeft = parseInt(prevState.ballPosition.left) + parseInt("5px");
+                return { ballPosition: { left: newLeft+"px" } };
             });
         }
     }
