@@ -7,7 +7,7 @@ class App extends Component {
         this.state = {
             renderBall: false,
             posi : 0,
-            ballPosition: { left: "0px" }
+            ballPosition: { marginLeft: '0px' }
         };
         this.renderChoice = this.renderBallOrButton.bind(this)
         this.buttonClickHandler = this.buttonClickHandler.bind(this)
@@ -17,8 +17,10 @@ class App extends Component {
     handleKeyDown(event) {
         if (event.key === "ArrowRight") {
             this.setState((prevState) => {
-                const newLeft = parseInt(prevState.ballPosition.left, 10) + 5 + "px";
-                return { ballPosition: { left: newLeft } };
+                const newLeft = parseInt(prevState.ballPosition.marginLeft, 10) + 5 + "px";
+                console.log("previouspadding: ",prevState.ballPosition.marginLeft);
+                console.log("newleft: ",newLeft);
+                return { ballPosition: { marginLeft: newLeft } };
             });
         }
     }
